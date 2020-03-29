@@ -10,8 +10,8 @@ from email.mime.image import MIMEImage
 import os
 
 
-fromaddr = "e1234sha@gmail.com"
-toaddr = "s5678sha@gmail.com"
+fromaddr = "Email_for_the_device"
+toaddr = "The_Owners_Email"
 
 mail = MIMEMultipart()
 
