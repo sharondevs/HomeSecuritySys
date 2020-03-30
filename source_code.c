@@ -17,11 +17,11 @@ sbit a6=P2^5;
 sbit  n= P2^6;
 sbit breach = P3^3;
 void motor();
-
+//Port allocation
 
 unsigned char ar[5];
 
-unsigned char com[5]={"13467"};
+unsigned char com[5]={"13467"}; //Passcode
 
 unsigned int f,m=1,p;
 
@@ -89,6 +89,7 @@ void motor()
 	}
 }
 
+//For the display config
 sbit rs=P3^0;
 sbit rw=P3^1;
 sbit en=P3^2;
@@ -144,7 +145,7 @@ sbit c3=P0^6; // column 3
 sbit c4=P0^7; // column 4
 
 unsigned int c;
-void breached()
+void breached() // This method is used for indicating the security breach 
 {
 	if(breach==1){
 			
@@ -157,7 +158,7 @@ void breached()
 		   }
 }
 
-char keypad1()
+char keypad1()  
 {	
 	P2=0xff;
 	while(1)
@@ -276,19 +277,17 @@ char keypad1()
 }
 
 void entered()
-				{
-					while(1){
-						if(n==1){
-						motor();
-						}
-						
-					if(a6==1){
-						break;
+{
+ 	while(1){
+		if(n==1){  //For allowing the user to open the door seamlessly
+			motor();
+			}
 					
-					}
-					}
-			
-			  }
+		if(a6==1){   // When the security mode is activated
+			break;		
+			}
+		}			
+}
 
 	
 
@@ -333,11 +332,11 @@ void main()
 			//compare();
 		if(ar[0]==com[0] && ar[1]==com[1] && ar[2]==com[2] && ar[3]==com[3] && ar[4]==com[4])
 		{
-			m=1;
+			m=1;  //If the passcode is right
 		}
 		else
 		{
-			m=0;
+			m=0; //Wrong passcode
 		}
 		if(m==1)
 		{
@@ -357,9 +356,9 @@ void main()
 			
 			
 		}
-		else if(m==0)
+		else if(m==0)  //Wrong passcode 
 		{
-			p++;
+			p++; 
 			cmd(0x01);
 			lcd_str(" WRONG PASSWORD");
 			cmd(0xc0);
@@ -367,7 +366,7 @@ void main()
 			delay_fv(1000,100);
 			delay_fv(1000,100);
 			m=1;
-			if(p==3)
+			if(p==3)   //The user has a countdown of 25 seconds
 			{
 					cmd(0x01);
 					lcd_str(" PLEASE CONTACT");
