@@ -17,25 +17,37 @@ The need for security systems nowadays is a serious demand. As the number of cri
 3.	SOFTWARE
 
 3.1	 8051 PROGRAM
+
 3.2	 RASPBERRY PI ZERO
+
 3.3	 PROTEUS SIMULATION 
 
 4.	MAJOR COMPONENTS
 
 4.1	Microcontroller
+
 4.2	 Raspberry Pi zero
+
 4.3	 PIR
+
 4.4	 Laser
+
 4.5	 LCD
+
 4.6	 Keyboard
+
 4.7	 Pi Camera
+
 4.8	 Motor Driver
+
 4.9	 Voltage Regulator
 
 5.	CIRCUIT
 
 6.	FUTURE SCOPE
+
 7.	CONCLUSION
+
 8.	REFERANCE
 
 The basic principle of operation is a password protected door lock controlled by a microcontroller. In addition to the basic door we’ve added  2xPIR sensors and a laser circuit for improving security. Raspberry pi zero act as the CPU for our system. PIR-1 act as a motion sensor while PIR-2 is designed for reducing pow-er usage which makes the system to use less power from the main supply.
